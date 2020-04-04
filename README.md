@@ -1,13 +1,17 @@
-# COVID App
+# COVID-19 App
 
 This application was developed on top of the sites:
-	- https://covid.saude.gov.br
-	- https://coronavirus.saude.gov.br
+
+- https://covid.saude.gov.br
+- https://coronavirus.saude.gov.br
 
 
-## dependencies
+## Dependencies
 	- webview_flutter: ^0.3.19+9
 	- url_launcher: ^5.4.2
+
+---
+
 
 ## Getting Started
 
