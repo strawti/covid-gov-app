@@ -6,6 +6,14 @@ This application was developed on top of the sites:
 - https://coronavirus.saude.gov.br
 
 
+
+## App
+![imagens do aplicativo covid19-gov](screenshots.png)
+
+
+
+
+
 ## Dependencies
 	- webview_flutter: ^0.3.19+9
 	- url_launcher: ^5.4.2
