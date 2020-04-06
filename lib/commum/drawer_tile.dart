@@ -15,33 +15,15 @@ class DrawerTile extends StatelessWidget {
 
 	Color _getColorBackground() {
 
-		if(color == 'blue') {
-			if(controller.page.round() == page) {
-				return Colors.blue[300];
+		if(color == 'blue')
+			return controller.page.round() == page ? Colors.blue[300] : Colors.blue[50];
 
-			} else {
-				return Colors.blue[50];
+		if(color == 'green')
+			return controller.page.round() == page ? Colors.green[300] : Colors.green[50];
 
-			}
+		if(color == 'yellow')
+			return controller.page.round() == page ? Colors.yellow[800] : Colors.orange[50];
 
-		} else if(color == 'green') {
-			if(controller.page.round() == page){
-				return Colors.green[300];
-
-			} else {
-				return Colors.green[50];
-
-			}
-
-		} else if(color == "yellow") {
-			if(controller.page.round() == page) {
-				return Colors.yellow[800];
-
-			} else {
-				return Colors.orange[50];
-				
-			}
-		}
 	}
 
 	Color _getColorTextAndIcon() {
