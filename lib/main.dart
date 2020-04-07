@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'telas/home.dart';
 
-import 'package:covidsaudegov/screens/home/home_screen.dart';
-
+// Método Principal
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: HomeScreen(),
+    home: Home(),
   ));
 }
