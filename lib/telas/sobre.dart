@@ -13,7 +13,7 @@ class About extends StatelessWidget {
 	A maioria das pessoas se infecta com os coronavírus comuns ao longo da vida, sendo as crianças pequenas mais propensas a se infectarem com o tipo mais comum do vírus. Os coronavírus mais comuns que infectam humanos são o alpha coronavírus 229E e NL63 e beta coronavírus OC43, HKU1...
 	""";
 
-  // Método para a estrutura de mostrar as informações
+  // Metodo para a estrutura de mostrar as informações
 	Widget _moreInformationWidget(String text, String content, {String imageURL}) {
 		return Container(
 			decoration: BoxDecoration(
