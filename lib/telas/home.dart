@@ -1,4 +1,8 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:connectivity/connectivity.dart';
 import '../componentes/appBar.dart';
 import '../componentes/nosso_drawer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -18,8 +22,21 @@ class Home extends StatelessWidget {
 		javascriptMode: JavascriptMode.unrestricted,
 	);
 
+  // verificar se o usuario está conectado com a internet
+  Future<bool> _checarConexao() async {
+  	var connectivityResult = await Connectivity().checkConnectivity();
+
+  	
+		if(connectivityResult == ConnectivityResult.wifi) return true;
+		if(connectivityResult == ConnectivityResult.mobile) return true;
+
+		return false;
+  }
+
 	@override
 	Widget build(BuildContext context) {
+		
+
     // Construção o corpo da tela
 		return Scaffold(
       // Cor do fundo
@@ -34,10 +51,38 @@ class Home extends StatelessWidget {
       // Corpo do aplicativo (body)
 			body: PageView(
 				controller: _pageController, // controlador
-				physics: NeverScrollableScrollPhysics(), // Mudando para não ficar rolar para baixo o scroll
+				physics: NeverScrollableScrollPhysics(), // não  rolar o scroll para baixo
 				children: <Widget> [
 					Scaffold(
-						body: siteWidget,
+						body: FutureBuilder<bool>(
+							future: _checarConexao(), 
+							builder: (context, snapshot) {
+								if(snapshot.data == null) {
+									return Center(child: CircularProgressIndicator());
+								}
+
+								if(snapshot.data == false) {
+									return Center(
+										child: Column(
+											crossAxisAlignment: CrossAxisAlignment.center,
+											mainAxisAlignment: MainAxisAlignment.center,
+											children: <Widget> [
+												Icon(Icons.signal_wifi_off, size: 40),
+												Text(
+													"Sem conexão com a internet.",
+													style: TextStyle(
+														color: Colors.grey[800],
+													),
+												)
+											]
+										)
+									);
+								}
+
+
+								return siteWidget;
+							}
+						),
 						floatingActionButton: _fab('https://covid.saude.gov.br')
 					),
 					Scaffold(
