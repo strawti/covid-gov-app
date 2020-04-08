@@ -17,6 +17,7 @@ This application was developed on top of the sites:
 ## Dependencies
 	- webview_flutter: ^0.3.19+9
 	- url_launcher: ^5.4.2
+	- connectivity: ^0.4.8+2
 
 ---
 
