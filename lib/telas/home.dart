@@ -12,9 +12,6 @@ import 'sobre.dart';
 
 // Tela Home
 class Home extends StatelessWidget {
-  
-  // Criando o controlador da para o PageView
-	final _pageController = PageController();
 	
   // Criação do webView para puxar o site
   final Widget siteWidget = WebView(
@@ -50,7 +47,6 @@ class Home extends StatelessWidget {
 
       // Corpo do aplicativo (body)
 			body: PageView(
-				controller: _pageController, // controlador
 				physics: NeverScrollableScrollPhysics(), // não  rolar o scroll para baixo
 				children: <Widget> [
 					Scaffold(

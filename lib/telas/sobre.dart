@@ -14,7 +14,7 @@ class About extends StatelessWidget {
 	""";
 
   // Metodo para a estrutura de mostrar as informações
-	Widget _moreInformationWidget(String text, String content, {String imageURL}) {
+	Widget _moreInformationWidget(String text, String content, {String image}) {
 		return Container(
 			decoration: BoxDecoration(
 				color: Colors.grey[200],
@@ -35,10 +35,10 @@ class About extends StatelessWidget {
 						child: Container(
 							padding: const EdgeInsets.all(10),
 							decoration: BoxDecoration(color: Colors.white),
-							child: imageURL == null || imageURL.isEmpty ? Text(
+							child: image == null || image.isEmpty ? Text(
 								content,
 								style: const TextStyle(height: 1.5),
-							) : Image.network(imageURL),
+							) : Image.asset(image),
 						),
 					),
 				]
@@ -83,7 +83,7 @@ class About extends StatelessWidget {
 		  				_moreInformationWidget(
 		  					"Comparativo entre doenças respiratórias",
 		  					"",
-		  					imageURL: "https://saude.gov.br/images/quadro-comparativo-sintomas-31-03-2020-3.png"
+		  					image: "images/quadro-comparativo-sintomas-31-03-2020-3.png"
 		  				),
 		  				_moreInformationWidget(
 		  					"Como se proteger",

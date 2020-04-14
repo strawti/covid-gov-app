@@ -6,11 +6,11 @@ class Prevencao extends StatelessWidget {
 
   // Lista para os links das imagens
 	final List<String> images = [
-		'https://coronavirus.saude.gov.br/images/png/2020/marco/02/img1-maos.png',
-		'https://coronavirus.saude.gov.br/images/png/2020/marco/02/img2-tosse.png',
-		'https://coronavirus.saude.gov.br/images/png/2020/marco/02/img3-pessoas.png',
-		'https://coronavirus.saude.gov.br/images/png/2020/marco/02/img4-janela.png',
-		'https://coronavirus.saude.gov.br/images/png/2020/marco/02/img5-objetos.png',
+		'images/img1-maos.png',
+		'images/img2-tosse.png',
+		'images/img3-pessoas.png',
+		'images/img4-janela.png',
+		'images/img5-objetos.png',
 	];
 
   // Método para construir o corpo da tela
@@ -24,8 +24,8 @@ class Prevencao extends StatelessWidget {
       body: ListView(
 		    children: <Widget> [
 		  		const ListTile(
-		  			title: Text('FONTE:'),
-		  			subtitle: Text("https://coronavirus.saude.gov.br/")
+		  			title: const Text('FONTE:'),
+		  			subtitle: const Text("https://coronavirus.saude.gov.br/")
 		  		),
 		  		_preventionTile(
 		  			'Lave as mãos com água e sabão ou use álcool em gel.', 
@@ -54,13 +54,14 @@ class Prevencao extends StatelessWidget {
 	}
 
   // Método privado para retornar o Card 
-	Widget _preventionTile(String content, String url) { // Passando como parâmetros o conteudo (content) e o link da imagem (url)
+	Widget _preventionTile(String content, String url) { 
+		// Passando como parâmetros o conteudo (content) e o link da imagem (url)
 		return Card(
       child: Padding(
       	padding: const EdgeInsets.all(10),
       	child: ListTile(
 	        title: Text(content),
-	        leading: Image.network(url)
+	        leading: Image.asset(url)
 	      ),
       ),
     );

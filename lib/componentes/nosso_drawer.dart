@@ -22,7 +22,7 @@ Widget nossoDrawer(context) {
               DrawerHeader(
                 child: Container(
                   child: Center(
-                    child: Image.network('https://covid.saude.gov.br/assets/imgs/logo-app.png'),
+                    child: Image.asset('images/logo-app.png'),
                   ),
                 ),
               ),
@@ -31,55 +31,59 @@ Widget nossoDrawer(context) {
               Card(
                 color: Colors.blue[200],
                 child: ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("Inicio"),
-                  subtitle: Text("Home"),
-                  trailing: Icon(Icons.arrow_forward),
+                  leading: const Icon(Icons.home),
+                  title: const Text("Inicio"),
+                  subtitle: const Text("Home"),
+                  trailing: const Icon(Icons.arrow_forward),
                   onTap: () {
                     // Método para ir para a página Home
+                    Navigator.of(context).pop();
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                   }),
               ),
               Card(
                 color: Colors.orange[100],
                 child: ListTile(
-                    leading: Icon(Icons.book),
-                    title: Text("O que é coronavírus?"),
-                    subtitle: Text("E outros detalhes"),
-                    trailing: Icon(Icons.arrow_forward),
+                    leading: const Icon(Icons.book),
+                    title: const Text("O que é coronavírus?"),
+                    subtitle: const Text("E outros detalhes"),
+                    trailing: const Icon(Icons.arrow_forward),
                     onTap: () {
+                      Navigator.of(context).pop();
                       Navigator.push(context, MaterialPageRoute(builder: (context) => About()));
                     }),
               ),
               Card(
                 color: Colors.green[200],
                 child: ListTile(
-                    leading: Icon(Icons.swap_vertical_circle),
-                    title: Text("Prevenção"),
-                    subtitle: Text("Dicas de como prevenir"),
-                    trailing: Icon(Icons.arrow_forward),
+                    leading: const Icon(Icons.swap_vertical_circle),
+                    title: const Text("Prevenção"),
+                    subtitle: const Text("Dicas de como prevenir"),
+                    trailing: const Icon(Icons.arrow_forward),
                     onTap: () {
+                      Navigator.of(context).pop();
                       Navigator.push(context, MaterialPageRoute(builder: (context) => Prevencao()));
                     }),
               ),
               Card(
                 color: Colors.purple[100],
                 child: ListTile(
-                    leading: Icon(Icons.sentiment_very_satisfied),
-                    title: Text("Sobre esse Aplicativo"),
-                    subtitle: Text("Detalhes sobre esse App."),
-                    trailing: Icon(Icons.arrow_forward),
+                    leading: const Icon(Icons.sentiment_very_satisfied),
+                    title: const Text("Sobre esse Aplicativo"),
+                    subtitle: const Text("Detalhes sobre esse App."),
+                    trailing: const Icon(Icons.arrow_forward),
                     onTap: () {
+                      Navigator.of(context).pop();
                       Navigator.push(context, MaterialPageRoute(builder: (context) => SobreApp()));
                     }),
               ),
               Card(
                 color: Colors.yellow[100],
                 child: ListTile(
-                    leading: Icon(Icons.security),
-                    title: Text("Juntos combateremos!"),
-                    subtitle: Text("Proteja sua família. "),
-                    trailing: Icon(Icons.arrow_forward),
+                    leading: const Icon(Icons.security),
+                    title: const Text("Juntos combateremos!"),
+                    subtitle: const Text("Proteja sua família. "),
+                    trailing: const Icon(Icons.arrow_forward),
                     onTap: () {
                       
                     }),
@@ -96,7 +100,7 @@ Widget nossoDrawer(context) {
                 Container(
                   height: 250,
                   child: Image.asset(
-                    "lib/imagens/fteamcode.jpg",
+                    "images/fteamcode.jpg",
                     semanticLabel: "Logo FTeam Code",
                     fit: BoxFit.fitHeight,
                   ),
@@ -106,7 +110,7 @@ Widget nossoDrawer(context) {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
+                    const Text(
                         "E-mail: fteamcodeapps@gmail.com",
                         style: TextStyle(fontSize: 15),
                       ),
