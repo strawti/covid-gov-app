@@ -1,5 +1,8 @@
 # COVID-19 App
 
+![](images/fteamcode.jpeg)
+
+
 This application was developed on top of the sites:
 
 - https://covid.saude.gov.br
