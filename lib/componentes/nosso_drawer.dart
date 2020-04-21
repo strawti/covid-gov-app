@@ -80,7 +80,7 @@ Widget nossoDrawer(context) {
             Image.asset(
               "images/fteamcode.jpeg",
               semanticLabel: "Logo FTeam Code",
-              width: MediaQuery.of(context).size.width / 1.5,
+              width: MediaQuery.of(context).size.width / 2,
             ),
 
             // Linha para mostrar o endereço de email
